@@ -9,8 +9,8 @@ struct TreeNode {
 		TreeNode(T v, TreeNode* l, TreeNode* r);
 
 		T value;
-		TreeNode* left;
-		TreeNode* right;
+		TreeNode* left = nullptr;
+		TreeNode* right = nullptr;
 };
 
 // Pointer templated
@@ -79,7 +79,7 @@ public:
 	void Clear();
 
 private:
-	TreeNode<int>* First;
+	TreeNode<int>* First = nullptr;
 
 	int size = 0;
 };

@@ -1,6 +1,7 @@
 #include "Environment.h"
 #include "Timer.h"
 
+
 std::vector<Object*> Environment::objects = std::vector<Object*>();
 int Environment::lifetimeObjectCount = 0;
 
@@ -162,3 +163,13 @@ void Environment::RandomiseBinaryTree()
     }
 
 }
+
+
+// Test functions
+# if true
+
+
+
+#endif
+
+
