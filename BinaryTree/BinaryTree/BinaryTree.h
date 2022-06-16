@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 
 // List element class
 // Non-pointer templated
@@ -72,9 +73,20 @@ public:
 
 	TreeNode<int>* GetFirstNode() { return First != nullptr ? First : nullptr; }
 
-	int GetValue(int value);
+	std::vector<int> PostOrderGet(TreeNode<int>* node, std::vector<int> currentList = std::vector<int>()) {
+		if (node == nullptr) {
+			return currentList;
+		}
 
-	void PrintAllValues();
+		if (node->left != nullptr) {
+			currentList = PostOrderGet(node->left, currentList);
+		}
+		if (node->right != nullptr) {
+			currentList = PostOrderGet(node->right, currentList);
+		}
+		currentList.push_back(node->value);
+		return currentList;
+	}
 
 	void Clear();
 

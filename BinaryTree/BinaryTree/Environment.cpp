@@ -83,6 +83,9 @@ void Environment::Update(float DeltaTime)
     for (int i = 0; i < objects.size(); i++) {
         objects[i]->Update(DeltaTime);
     }
+
+    
+    
     
 }
 
@@ -153,7 +156,7 @@ void Environment::RemoveListElement()
 
 void Environment::RandomiseBinaryTree()
 {
-    binaryTree = BinaryTree();
+    binaryTree.Clear();
     int amount = rand() % 30 + 2;
 
     for (int i = 0; i < amount; i++) {
@@ -161,13 +164,5 @@ void Environment::RandomiseBinaryTree()
     }
 
 }
-
-
-// Test functions
-# if true
-
-
-
-#endif
 
 

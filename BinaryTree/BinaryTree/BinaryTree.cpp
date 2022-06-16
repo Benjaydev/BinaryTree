@@ -179,19 +179,12 @@ void BinaryTree::Remove(int value)
 	 size--;
 }
 
-int BinaryTree::GetValue(int index)
-{
-	return 0;
-}
-
-void BinaryTree::PrintAllValues()
-{
-}
-
 void BinaryTree::Clear()
 {
-	for (int i = 0; i < size; i++) {
-		Remove(First->value);
+	std::vector<int> nodes = PostOrderGet(First);
+
+	for (int i = 0; i < nodes.size(); i++) {
+		Remove(nodes[i]);
 	}
 
 }
