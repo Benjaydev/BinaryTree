@@ -179,6 +179,28 @@ void BinaryTree::Remove(int value)
 	 size--;
 }
 
+void BinaryTree::FindNode(int value, TreeNode<int>*& foundNode, TreeNode<int>*& parentNode)
+{
+	parentNode = nullptr;
+	foundNode = First;
+	while (true) {
+		if (value < foundNode->value) {
+			parentNode = foundNode;
+			foundNode = foundNode->left;
+
+		}
+
+		else if (value > foundNode->value) {
+			parentNode = foundNode;
+			foundNode = foundNode->right;
+		}
+		else {
+
+			break;
+		}
+	}
+}
+
 void BinaryTree::Clear()
 {
 	std::vector<int> nodes = PostOrderGet(First);

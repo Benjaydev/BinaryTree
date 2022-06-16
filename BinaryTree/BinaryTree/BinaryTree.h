@@ -88,6 +88,9 @@ public:
 		return currentList;
 	}
 
+	void FindNode(int value, TreeNode<int>*& foundNode, TreeNode<int>*& parentNode);
+
+
 	void Clear();
 
 private:
